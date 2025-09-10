@@ -45,7 +45,7 @@ class ChatbotAssistant:                                                #class fo
         self.documents = []                                            #list of tuples: tokenized patterns and corresponding intent tag
         self.vocabulary = []                                           #list of unique words
         self.intents = []                                              #list of all intent tags
-        self.intents_responses = {}                                    #mapping from intent tag -> possible responses
+        self.intents_responses = {}                                    
 
         self.function_mappings = function_mappings                     
 
