@@ -186,3 +186,7 @@ if __name__ == '__main__':
             break
 
         print(assistant.process_message(message))
+        
+#testing this for merge into working main
+#unsure if this works
+#hopefully it does
