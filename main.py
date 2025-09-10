@@ -2,6 +2,7 @@ import os                                                             #provides 
 import json                                                           #allows reading of JSON files(intents.json)
 import random                                                         
 #test for merge
+#test2
 import nltk                                                           #natural language toolkit (tokenization, lemmatization)
 import numpy as np                                                    #used to work with arrays
 
