@@ -4,7 +4,7 @@ import random
 
 import nltk                                                           #natural language toolkit (tokenization, lemmatization)
 import numpy as np                                                    #used to work with arrays
-
+#test
 import torch                                                          #PyTorch library for building neural network
 import torch.nn as nn                                                 #contains neural network layers (Linear, ReLU)
 import torch.nn.functional as F                                       #allows relu to be used directly
