@@ -11,10 +11,6 @@ import torch.nn.functional as F                                       #allows re
 import torch.optim as optim                                           #optimization algorithms for training the model
 from torch.utils.data import DataLoader, TensorDataset                #utilities to load datasets and create mini-batches
 
-###download nltk resouces once if not already downloaded###
-#nltk.download('punkt')
-#nltk.download('wordnet')
-
 class ChatbotModel(nn.Module):                                         #define the neural architecture for the chatbot
 
     def __init__(self, input_size, output_size):                       #constructor: initialize the network with input and output dimensions
@@ -186,5 +182,3 @@ if __name__ == '__main__':
             break
 
         print(assistant.process_message(message))
-
-        ### if you see this i committed to main
