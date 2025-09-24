@@ -1,39 +1,3 @@
-'''import tkinter as tk
-from tkinter import scrolledtext
-
-class ChatBotGUI:
-    
-    def send_message(user_input, chat_history):
-        user_message = user_input.get()
-        chat_history.insert(tk.END, "You: " + user_message + "\n")
-        user_input.delete(0, tk.END)
-        
-        #simulate chatbot response
-        chatbot_response = "Bot: Hello"
-        chat_history.insert(tk.END, chatbot_response + "\n")
-        
-    
-    
-    #create main window
-    root = tk.Tk()
-    root.title("Security AI Chatbot")
-    
-    #create chat history display area
-    chat_history = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=50, height=20)
-    chat_history.pack(padx=10,pady=10)
-    
-    #create user input field
-    user_input = tk.Entry(root, width=40)
-    user_input.pack(pady=5)
-    
-    #create send button
-    send_button = tk.Button(root, text="Send", command=send_message(user_input, chat_history))
-    send_button.pack(pady=5)
-    
-    root.mainloop()
-    
-'''
-
 import tkinter as tk
 from tkinter import scrolledtext
 
