@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"intents": [
 		{
@@ -28,3 +29,76 @@
 		}
 	]
 }
+=======
+{
+  "intents": [
+	{ 
+      "tag": "Greetings",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "How are you",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello, how may I assist you today?"
+      ]
+    },
+
+	{
+      "tag": "Farewells",
+      "patterns": [
+        "Goodbye",
+        "Bye",
+        "So long",
+        "Farewell"
+      ],
+      "responses": [
+        "Goodbye",
+		"Until next time, then",
+		"So long partner",
+		"See you on the other side",
+		"End of line",
+		"Wake me, when you need me"
+      ]
+    },
+
+    {
+      "tag": "Information_Security",
+      "patterns": [
+        "what is information security",
+        "tell me about IS",
+        "define information security",
+        "what does IS mean"
+      ],
+      "responses": [
+        "Information Security (IS) is the practice of protecting information from unauthorized access, disclosure, alteration, or destruction."
+      ]
+    },
+
+    {
+      "tag": "password_policy",
+      "patterns": [
+        "what is the password policy",
+        "tell me about password rules",
+        "how long should my password be"
+      ],
+      "responses": [
+        "Passwords must comply with the company password policy."
+      ]
+    },
+
+    {
+      "tag": "incident_response",
+      "patterns": [
+        "what should I do if I suspect a breach",
+        "who do I report a security incident to",
+        "how do I handle a phishing email"
+      ],
+      "responses": [
+        "Please follow the company’s Incident Response Policy (Section 6.1). Report immediately to the IS team."
+      ]
+    }
+  ]
+}
+>>>>>>> main
