@@ -31,7 +31,7 @@ class ChatbotModel(nn.Module):                                         #define t
 
         return x                                           
 
- 
+
 class ChatbotAssistant:                                                #class for managing chatbot logic and interaction
 
     def __init__(self, intents_path, function_mappings = None):        #constructor: set paths and initialize storage structures
