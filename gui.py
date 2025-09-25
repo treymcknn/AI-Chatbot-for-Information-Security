@@ -8,11 +8,17 @@ class ChatbotGUI:
 
         self.chat_history = scrolledtext.ScrolledText(master, wrap=tk.WORD, width=50, height=20, font=("Arial", 10))
         self.chat_history.pack(padx=10, pady=10)
-        self.chat_history.config(state=tk.DISABLED) # Disable editing
 
-        self.user_input = tk.Entry(master, width=40, font=("Arial", 10))
+        
+        self.chat_history.config(state=tk.DISABLED) # Disable editing
+        self.chat_history.tag_configure("user_tag", justify="right", foreground="blue") # Adjust user output to be right justified
+        self.chat_history.tag_configure("chatbot_tag", justify="left", foreground="green") # Adjust chatbot output to be left justified
+
+
+        self.user_input = tk.Entry(master, width=40, font=("Arial", 10), justify=tk.RIGHT)
         self.user_input.pack(padx=10, pady=5, side=tk.LEFT, fill=tk.X, expand=True)
         self.user_input.bind("<Return>", self.send_message) # Bind Enter key
+        self.user_input.focus_set() # Set focus to entry box
 
         self.send_button = tk.Button(master, text="Send", command=self.send_message, font=("Arial", 10))
         self.send_button.pack(padx=5, pady=5, side=tk.RIGHT)
@@ -51,4 +57,19 @@ if __name__ == "__main__":
     app = ChatbotGUI(root)
     root.mainloop()
     
-    
+'''import tkinter as tk
+
+root = tk.Tk()
+root.title("Entry Alignment")
+
+# Left-aligned Entry
+entry_left = tk.Entry(root, justify=tk.LEFT)
+entry_left.insert(0, "Left Aligned Input")
+entry_left.pack(pady=10)
+
+# Right-aligned Entry
+entry_right = tk.Entry(root, justify=tk.RIGHT)
+entry_right.insert(0, "Right Aligned Input")
+entry_right.pack(pady=10)
+
+root.mainloop()'''
