@@ -56,20 +56,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = ChatbotGUI(root)
     root.mainloop()
-    
-'''import tkinter as tk
-
-root = tk.Tk()
-root.title("Entry Alignment")
-
-# Left-aligned Entry
-entry_left = tk.Entry(root, justify=tk.LEFT)
-entry_left.insert(0, "Left Aligned Input")
-entry_left.pack(pady=10)
-
-# Right-aligned Entry
-entry_right = tk.Entry(root, justify=tk.RIGHT)
-entry_right.insert(0, "Right Aligned Input")
-entry_right.pack(pady=10)
-
-root.mainloop()'''
