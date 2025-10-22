@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit, QLineEdit, QPushButton, QLabel, QScrollArea
+from testlogic import ourlogic
 
 class ChatBotGUI(QWidget):
     def __init__(self):
