@@ -1,10 +1,13 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit, QLineEdit, QPushButton
+# =========================================================
+# Local RAG Chatbot using TinyLlama + FAISS (fully local)
+# =========================================================
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 import json
+
 
 # ----------------------------
 # Load the TinyLlama model
@@ -121,55 +124,17 @@ def ask_llama(query, similarity_threshold=0.50):
     return response
 
 
-class ChatBotGUI(QWidget):    
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Security Chatbot")
-        self.setGeometry(100, 100, 500, 600)
-        self.layout = QVBoxLayout()
+# ----------------------------
+# interactive chat
+# ----------------------------
+print("\n✅ RAG system ready! Type your question below.")
+print("Type 'exit' to quit.\n")
 
-        # Chat display (read-only)
-        self.chat_display = QTextEdit()
-        self.chat_display.setReadOnly(True)
-        self.layout.addWidget(self.chat_display)
+while True:
+    query = input("You: ")
+    if query.lower() in ["exit", "quit"]:
+        print("Goodbye!")
+        break
 
-        # User input
-        self.user_input = QLineEdit()
-        self.user_input.setPlaceholderText("Type your message here...")
-        self.user_input.setFocus() #set focus to the input box
-        self.user_input.returnPressed.connect(self.send_message) #bind enter key to send button
-        self.layout.addWidget(self.user_input)
-
-        # Send button
-        self.send_button = QPushButton("Send")
-        self.send_button.clicked.connect(self.send_message)
-        self.layout.addWidget(self.send_button)
-
-        self.setLayout(self.layout)
-
-    def send_message(self):
-        #check if input is blank and ask user for a question if so.
-        user_text = self.user_input.text().strip() #take away blank spaces before and after input
-        
-        if not user_text:
-            self.chat_display.append("<b>Bot:</b> Please enter a question")
-            self.user_input.clear()
-            return
-        
-        # Show user message
-        self.chat_display.append(f"<b>You:</b> {user_text}")
-        self.user_input.clear()
-
-        # Here, connect with your chatbot logic to get a reply
-        bot_reply = self.get_bot_reply(user_text)
-        self.chat_display.append(f"<b>Bot:</b> {bot_reply}")
-
-    def get_bot_reply(self, message):
-        
-        return ask_llama(message)
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = ChatBotGUI()
-    window.show()
-    sys.exit(app.exec_())
+    answer = ask_llama(query)
+    print(f"Answer: {answer}\n")
