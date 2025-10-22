@@ -1,0 +1,14 @@
+[
+  {
+    "section": "Password Policy",
+    "text": "Employees must reset passwords every 90 days."
+  },
+  {
+    "section": "Device Policy",
+    "text": "Personal devices must be approved by IT before they can connect to company systems."
+  },
+  {
+    "section": "Remote Work Policy",
+    "text": "Employees working remotely must use the corporate VPN for all work activities."
+  }
+]
