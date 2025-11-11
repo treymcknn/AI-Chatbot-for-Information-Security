@@ -70,4 +70,3 @@ while True:
         break
     answer = ask_tinyllama(user_input)
     print(f"Bot: {answer}\n")
-
