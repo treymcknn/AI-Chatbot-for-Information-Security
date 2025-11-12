@@ -134,7 +134,7 @@ class ChatBotGUI(QWidget):
         return answer
     
     def show_processing_dialog(self):
-        #self.progress_dialog = QProgressDialog(self)
+        self.progress_dialog = QProgressDialog(self)
         self.progress_dialog.setModal(True)
         self.progress_dialog.setMinimumDuration(0)
         self.progress_dialog.setWindowTitle("Please Wait")
