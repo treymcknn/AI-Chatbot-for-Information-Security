@@ -63,11 +63,11 @@ def ask_tinyllama(query):
         response = response.split("Answer:")[-1].strip()
     return response
 
+'''
 # === Chat loop ===
 print("\n Cybersecurity Policy Chatbot (TinyLlama + Pinecone)")
 print("Type your question (or 'exit' to quit)\n")
 
-'''
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
