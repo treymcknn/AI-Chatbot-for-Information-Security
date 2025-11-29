@@ -1,4 +1,4 @@
 pinecone-client
 sentence-transformers
-transformers
-torch
+requests
+PyQt5
