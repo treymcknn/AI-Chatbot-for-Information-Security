@@ -3,3 +3,4 @@ sentence-transformers
 transformers (should be installed with sentence-transformers)
 torch  (should be installed with sentence-transformers) 
 pyqt5
+accelerate
