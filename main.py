@@ -7,14 +7,14 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit, QLine
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
-# === Pinecone setup ===
+# Pinecone setup
 pc = Pinecone(api_key="pcsk_6e2JzS_PZYtxdavrAwT6JVaBzFVB2gNs4j6DVeu8LQwNf8WfoT3bwmrbQSCWpHHBvWh91P")
 index_name = "infosec-policies"
 index = pc.Index(index_name)
 
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
-# === TinyLlama setup ===
+# TinyLlama setup
 print("Loading TinyLlama model... (first load may take a minute)")
 tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 model = AutoModelForCausalLM.from_pretrained(
@@ -23,7 +23,7 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype=torch.float16
 )
 
-# === Retrieve top policy from Pinecone ===
+# etrieve top policy from Pinecone
 def retrieve_policy(query, top_k=1):
     vector = embedder.encode([query], convert_to_numpy=True)[0].tolist()
     results = index.query(
@@ -36,7 +36,7 @@ def retrieve_policy(query, top_k=1):
         return None
     return results["matches"][0]["metadata"]["text"]
 
-# === Generate TinyLlama answer ===
+# Generate TinyLlama answer
 def ask_tinyllama(query):
     context = retrieve_policy(query)
     if not context:
