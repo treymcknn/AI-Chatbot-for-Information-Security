@@ -1,4 +1,6 @@
-pinecone-client
+pinecone-client (try just pip install pinecone first)
 sentence-transformers
-requests
-PyQt5
+transformers (should be installed with sentence-transformers)
+torch  (should be installed with sentence-transformers) 
+pyqt5
+accelerate
