@@ -1,7 +1,7 @@
 from pinecone import Pinecone
 from sentence_transformers import SentenceTransformer
 
-# === Initialize Pinecone ===
+# Initialize Pinecone
 pc = Pinecone(api_key="pcsk_6e2JzS_PZYtxdavrAwT6JVaBzFVB2gNs4j6DVeu8LQwNf8WfoT3bwmrbQSCWpHHBvWh91P")
 index_name = "infosec-policies"
 
@@ -17,7 +17,7 @@ index = pc.Index(index_name)
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 
-# === Hardcoded cybersecurity policies ===
+# cybersecurity policies
 policies = [
     {
         "id": "rec49",
@@ -389,7 +389,7 @@ policies = [
     }
 ]
 
-# === Embed and upload to Pinecone ===
+# Embed and upload to Pinecone
 print("Embedding and uploading Infosec policies to Pinecone...")
 
 # Generate embeddings for each policy text
